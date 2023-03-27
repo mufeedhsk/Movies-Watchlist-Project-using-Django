@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock title %}
+{% block content %}
+<div id="trending-container">
+
+
+</div>
+<div id="thriller-container" class="common-container">
+    <div class="titles">
+        <h1 class="title-icon">Thriller <i class="fa-solid fa-greater-than"></i></h1>
+    </div>
+    <div id="see-all-thriller">
+        <button class="see-all-button">
+            <a href="{% url 'thriller' %}"><h1>See All </h1></a>
+        </button>
+    </div>
+    <div id="card-container">
+        {% for t in thrillers %}
+        <div class="movie-card">
+            <div>
+                <img src="{{ t.T_movie_image.url }}" alt="" class="movie-image">
+            </div>
+            <div>
+                <h3 class="movie-rating">{{ t.T_movie_rating }}</h3>
+            </div>
+            <div>
+                <h1 class="movie-name">{{ t.T_movie_name }}</h1>
+            </div>
+            <div>
+                <h3 class="movie-genre">{{ t.T_movie_genre }}</h3>
+            </div>
+        </div>
+        {% endfor %}
+    </div>    
+</div>
+<div id="horror-container" class="common-container">
+    <div class="titles">
+        <h1 class="title-icon">Horror <i class="fa-solid fa-greater-than"></i></h1>
+    </div>
+    <div id="see-all-horror">
+        <button class="see-all-button">
+            <a href="{% url 'horror' %}"><h1>See All </h1></a>
+        </button>
+    </div>
+    <div id="card-container">
+        {% for h in horrors %}
+        <div class="movie-card">
+            <div>
+                <img src="{{ h.H_movie_image.url }}" alt="" class="movie-image">
+            </div>
+            <div>
+                <h3 class="movie-rating">{{h.H_movie_rating}}</h3>
+            </div>
+            <div>
+                <h1 class="movie-name">{{h.H_movie_name}}</h1>
+            </div>
+            <div>
+                <h3 class="movie-genre">{{h.H_movie_genre}}</h3>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div id="action-container" class="common-container">
+    <div class="titles">
+        <h1 class="title-icon">Action <i class="fa-solid fa-greater-than"></i></h1>
+    </div>
+    <div id="see-all-action">
+        <button class="see-all-button">
+            <a href="{% url 'action' %}"><h1>See All </h1></a>
+        </button>
+    </div>
+    <div id="card-container">
+        {% for a in actions %}
+        <div class="movie-card">
+            <div>
+                <img src="{{ a.A_movie_image.url }}" alt="" class="movie-image">
+            </div>
+            <div>
+                <h3 class="movie-rating">{{a.A_movie_rating}}</h3>
+            </div>
+            <div>
+                <h1 class="movie-name">{{a.A_movie_name}}</h1>
+            </div>
+            <div>
+                <h3 class="movie-genre">{{a.A_movie_genre}}</h3>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div id="comedy-container" class="common-container">
+    <div class="titles">
+        <h1 class="title-icon">Comedy <i class="fa-solid fa-greater-than"></i></h1>
+    </div>
+    <div id="see-all-comedy">
+        <button class="see-all-button">
+            <a href="{% url 'comedy' %}"><h1>See All </h1></a>
+        </button>
+    </div>
+    <div id="card-container">
+        {% for c in comedys %}
+        <div class="movie-card">
+            <div>
+                <img src="{{ c.C_movie_image.url }}" alt="" class="movie-image">
+            </div>
+            <div>
+                <h3 class="movie-rating">{{c.C_movie_rating}}</h3>
+            </div>
+            <div>
+                <h1 class="movie-name">{{c.C_movie_name}}</h1>
+            </div>
+            <div>
+                <h3 class="movie-genre">{{c.C_movie_genre}}</h3>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

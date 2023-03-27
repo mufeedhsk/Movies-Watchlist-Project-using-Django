@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Horror{% endblock title %}
+{% block content %}
+<div class="common-see-all-container">
+    {% for h in horrors %}
+        <div class="see-all-common-movie-card">
+            <div>
+                <img src="{{ h.H_movie_image.url }}" alt="" class="movie-image">
+            </div>
+            <div>
+                <h3 class="movie-rating">{{h.H_movie_rating}}</h3>
+            </div>
+            <div>
+                <h1 class="movie-name">{{h.H_movie_name}}</h1>
+            </div>
+            <div>
+                <h3 class="movie-genre">{{h.H_movie_genre}}</h3>
+            </div>
+        </div>
+        {% endfor %}
+</div>    
+{% endblock content %}

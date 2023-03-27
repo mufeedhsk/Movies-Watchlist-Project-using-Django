@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Action{% endblock title %}
+{% block content %}
+<div class="common-see-all-container">
+    {% for a in actions %}
+    <div class="see-all-common-movie-card">
+        <div>
+            <img src="{{ a.A_movie_image.url }}" alt="" class="movie-image">
+        </div>
+        <div>
+            <h3 class="movie-rating">{{a.A_movie_rating}}</h3>
+        </div>
+        <div>
+            <h1 class="movie-name">{{a.A_movie_name}}</h1>
+        </div>
+        <div>
+            <h3 class="movie-genre">{{a.A_movie_genre}}</h3>
+        </div>
+    </div>
+    {% endfor %}
+</div>    
+{% endblock content %}

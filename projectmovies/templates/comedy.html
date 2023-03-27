@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Comedy{% endblock title %}
+{% block content %}
+<div class="common-see-all-container">
+    {% for c in comedys %}
+        <div class="see-all-common-movie-card">
+            <div>
+                <img src="{{ c.C_movie_image.url }}" alt="" class="movie-image">
+            </div>
+            <div>
+                <h3 class="movie-rating">{{c.C_movie_rating}}</h3>
+            </div>
+            <div>
+                <h1 class="movie-name">{{c.C_movie_name}}</h1>
+            </div>
+            <div>
+                <h3 class="movie-genre">{{c.C_movie_genre}}</h3>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+{% endblock content %}
